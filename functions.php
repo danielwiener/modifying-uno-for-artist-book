@@ -247,7 +247,7 @@ function gpp_base_archive_loop_uno() {
 	<div class="grid_4<?php if($i%3==0){ echo " alpha";} elseif ($i%3==2){echo " omega";} ?>">
 		<div class="archivecontent pad">
 			 <h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '200' ) ); ?></a>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '400' ) ); ?></a>
 		</div>
 	</div>
 	<?php if($i%3==2){echo "<div class='clear'></div>";} ?>
@@ -262,7 +262,7 @@ function gpp_base_search_loop_uno() {
 	<div class="grid_4<?php if($i%3==0){ echo " alpha";} elseif ($i%3==2){echo " omega";} ?>">
 		<div class="archivecontent pad">
 			 <h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '200' ) ); ?></a>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '400' ) ); ?></a>
 			<?php gpp_base_content(); ?>
 		</div>
 	</div>
