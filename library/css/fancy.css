@@ -1,0 +1,14 @@
+/* Fancy */
+
+@import url("../../../base/library/css/default.css");
+h1,h2,h3,h4,h5,h6,.description, .entry-meta, .entry-utility, .entry-author, div.meta a, .entry-date, #commentform input,
+.description, .entry-meta, .entry-utility, .entry-author, div.meta a, .entry-date, #commentform p { font-style: italic; }
+div.menu ul li ul.sub-menu, #singlecontent, .footerwidget, .copytext {border-top: 1px solid #ddd;}
+div.menu, div.menu ul ul, div.menu ul a {background-color: #fff; border:none}
+#commentsbox{border-top:1px dotted #ddd;}
+#footer, #footer a, h2.title {color: #aaa;}
+div.meta a, .entry-date, .postmetadata, .postmetadata a { color: #999;}
+div.meta a.title {color: #000;}
+#indicator a {text-indent: -9999em;background: url(../../images/circlefills.png) no-repeat;}
+div.menu ul ul li a {background-color: #efefef;}
+div.menu ul li a:hover, div.menu ul ul li a:hover, div.menu ul a:focus.sf-with-ul {background-color: #fff;}

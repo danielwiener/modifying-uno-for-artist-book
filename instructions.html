@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Uno Instructions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	@import url("style.css");
+	ol li {margin: 50px 0;}
+	ol li li {margin: 10px 0;}
+</style>
+</head>
+<body>
+<div class="container_12">
+	<h1 style="font-size:60px;font-weight:bold;margin:40px 0">Instructions</h1>
+		<p><img src="screenshot.png" alt="Base screenshot" class="alignright" /><a href="http://graphpaperpress.com/themes/uno/">Uno</a> is one-column photoblogging theme for the <a href="http://graphpaperpress.com/themes/base/">Base Theme Framework</a> for WordPress. You must have Base installed in your themes directory for Uno to work.  The theme design was developed with users who appreciate visual browsing and prefer a minimal layout, with their photos featured front and center.  This theme validates as Strict XHTML and has been tested on Chrome, Firefox 3.6+, Safari 4.0+, Opera 10+, IE8, and IE7</p>
+	
+	<ol>
+		
+		<li>
+			<h2>Installation</h2>
+			<ol>
+				<li>Unzip <strong>the .zip file</strong> to your computer's desktop. It should be contained within a folder called <strong>/uno/</strong></li>
+				<li>Upload the folder and its contents to the themes directory of your blog <strong>via FTP</strong>, located in <strong>wp-content/themes</strong> where WordPress is installed.</li>
+				<li>Click on <strong>Appearance</strong> - <strong>Themes</strong> menu from the WordPress admin panel and then activate Uno.</li>
+				<li>Click on <strong>View Site</strong> at the top of the page.  Bam.  Hot site!</li>
+			</ol>
+			<p><strong>Note:</strong> Here's <a href="http://vimeo.com/8624806" title="How To Install Modularity">a related video</a> about installing <a href="http://graphpaperpress.com/demo/?themedemo=modularity" title="Modularity">Modularity</a>, another theme by Graph Paper Press</p>
+		</li>
+		
+		<li>
+			<h2>Installation Troubleshooting</h2>
+			<p>If you've performed a clean install of Uno and are having problems, make sure that the following conditions have been met:
+			<ol>
+				<li>Make sure that you've installed Uno properly. You should use an FTP program like <a href="http://filezilla-project.org/">FileZilla</a>, <a href="http://winscp.net/eng/index.php">WinSCP</a>, or <a href="http://fetchsoftworks.com/">Fetch</a> to upload your files. <strong>Do not</strong> use WordPress' <em>Install a theme in .zip format</em> option.</li>
+				<li><strong>Permissions:</strong> On most servers, Uno <strong>files</strong> should be set to <strong>644</strong> and <strong>folders</strong> should be set to <strong>755</strong>.</li>
+				<li>Make sure that you've deactivated all of your plugins before installing and/or upgrading Uno.</li>
+				<li>Your Uno folder should be named <strong>Uno</strong>. <strong>Do not rename</strong> this folder.</li>
+				<li>If you are upgrading your version of Uno, make sure to backup first and completely delete your old version of Uno from your server before uploading the new version of Uno to your server.</li>
+			</ol>
+		</li>
+		
+		<li>
+			<h2>Settings</h2>
+			<ol>
+				<li>Click Settings -> Media.  Set your thumbnails to 300 x 200.  Set your medium photo size to 620 x 0.  Set your large size to 940 x 0.</li>
+				<li>Set your external video embed width to 620 (or 940 if you want videos to span full page width). Leave the height blank. This applied for your YouTube or Vimeo links.</li>
+
+				<li>This theme will automatically create thumbnails from the images that you upload, when you upload them.</li>
+		</ol>
+			<h3>Important</h3>
+			<p>If you are migrating from an old theme to a new theme and your thumbnails look squished or distorted, you might need to re-upload the image you plan on using for the post thumbnail.  This is because WordPress creates your image sizes based on the dimensions you specified above.  Old thumbnails will not be automatically resized.  You can also <a href="http://WordPress.org/extend/plugins/regenerate-thumbnails/" title="regenerate your thumbnails">regenerate your thumbnails</a> so that your old uploaded media have the new settings applied to it.</p>
+			<p>By default, thumbnails are auto cropped by WordPress.  This theme checks first to see if you have added the URL to your preferred thumbnail to custom field called, you guessed it, thumbnail.  If not, the theme will defer to the first photo that you uploaded using WordPress' Add Photo icon.  If you haven't uploaded a photo using the Add Photo icon, the theme will can the post body for an image, and use it.  If no photo exists in the post body, the theme will use a default image.  As you can see, this series of "checks" allow you to have 100% control over your post thumbnails.</p>
+		</li>
+		
+		<li>
+			<h2>Menus</h2>
+			<p>This theme uses WordPress' Menu feature for configuring your site navigational menu.  To configure your menu, visit the Appearance -> Menu tab on your WordPress dashboard.  <a href="http://vimeo.com/16432328">Here is a video tutorial</a>.</p>
+		</li>
+		
+		<li>
+			<h2>Categories</h2>
+			<p>This theme relies on categories for changing the design of each post.  Thus, it's best to NOT assign posts to more than one category at a time.  Otherwise, navigating between posts can take users from a Gallery post directly into a Blog post, thus interrupting the flow between Galleries.  Assign each post to one category and you will be good to go.</p>
+		</li>
+		
+		<li>
+			<h2>Galleries</h2>
+			<p>To add a gallery to a post, simply upload images into the Post using WordPress' Add Media tool.  DO NOT insert the gallery into the post.  Uno automatically pulls the images uploaded into the Post onto the page.  The single post template automatically extracts all images uploaded into a post.  To remove an image from the slideshow, simply delete or unattach that specific image from the post.</p>
+		</li>
+		
+		<li>
+			<h2>Gallery Height</h2>
+			<p>By default the slideshow is 600 pixels tall.  We define the exact height of the slideshow so your website doesn't jump around vertically.  To increase the slideshow height to, say, 700 pixels tall, just add this CSS snippet to your Custom CSS panel:<br /><br />
+			<code>.maincontent {height: 700px;}</code></p>
+		</li>
+		
+		<li>
+			<h2>Blog Page</h2>
+			<p>This theme comes packaged with a <a href="http://codex.wordpress.org/Pages#Page_Templates">Page template</a> for displaying a list of all Posts, regardless of category.  To create this Blog page, create a Page called Blog and assign it to the Blog page template (located to the right underneath the Page Attributes section.  If the Page Attributes section is not visible, you can click the isn't visible, toggle the Screen Options tab located in the upper right and check the Page Attributes checkbox.)</p>
+		</li>
+		
+		<li>
+			<h2>Fonts</h2>
+			<p>This theme can use any font from the <a href="http://code.google.com/webfonts">Google Font Directory</a>.  The demo site uses the <a href="http://code.google.com/webfonts/family?family=Reenie+Beanie&subset=latin">Reenie+Beanie</a> font.</p>
+		</li>
+		
+		<li>
+			<h2>Common Problems</h2>
+			<p>This theme uses jQuery javascript to do lots of fancy stuff.  If your theme looks broken, than you likely have a plugin that uses a conflicting javascript library.  Deactivate your plugins, one-by-one, to determine which plugin is conflicting with jQuery.</p>
+			<p>Still having trouble?  Consider <a href="http://graphpaperpress.com/members/signup.php">becoming a member of Graph Paper Press</a> so you can get access to our private, well-groomed <a href="http://graphpaperpress.com/support/">support forum</a>, tutorials, and additional themes.</p>
+		</li>		
+		
+		<li>
+			<h2>Recommended Plugins</h2>
+			<ul>
+				<li><a href="http://WordPress.org/extend/plugins/w3-total-cache/">W3 Total Cache:</a> This plugin generates static html files from your dynamic WordPress blog.  After a html file is generated your webserver will serve that file instead of processing the comparatively heavier and more expensive WordPress PHP scripts.</li>
+				<li><a href="http://WordPress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a>: If you moved from another theme to this theme, and you are having image size issues, then after setting proper image sizes, feel free to use this plugin and regenerate all the image to the new image size.</li>
+			</ul>
+		</li>
+
+		<li>
+			<h2>Credits</h2>
+			<ul>
+				<li><a href="http://nhuja.com" title="Chandra Maharzan">Chandra Maharzan</a> - Design / Development</li>
+				<li><a href="http://thadallender.com" title="Thad Allender">Thad Allender</a> - Tweaks / Suggestions</li>
+			</ul>
+		</li>
+		
+		<li>
+			<h2>License Details</h2>
+			<p>There are a few things to know that you can and cannot do with this theme:</p>
+			<ul>
+				<li>Give credit where credit is due.  Keeping the credit link intact is <strong>recommended</strong>.  If you want to remove the credit, consider becoming <a href="http://graphpaperpress.com/members/signup.php">a developer-level member of Graph Paper Press</a>.</li>
+				<li>You <strong>may</strong> use this product for personal and commercial purposes.</li>
+			</ul>
+			<br />
+			<p>This theme was created for by us for you.  <a href="http://graphpaperpress.com/contact/">Contact us</a> for inquiries, comments, or suggestions</p>
+		</li>
+		
+	</ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/*
+Theme Name: Elena Berriolo using Uno
+Theme URI: http://graphpaperpress.com
+Description: A child theme for Base Theme Framework, modified for Elena Berriolo
+Author: Graph Paper Press and Daniel Wiener
+Author URI: http://graphpaperpress.com
+Template: base
+Version: 1.1
+License:  GPL
+*/
+	
+@import url("../base/style.css");
+
+.app {border:none;}
+#masthead {text-align: center;padding: 1.5em 0;}
+h2.title {font-size: 16px;text-align: center;text-transform: uppercase;}
+h3 {margin-top:10px;}
+
+/* Menu */
+div.menu ul {clear:left; float:right; right:50%;position: relative;border:none !important;}
+div.menu ul li {left: 50%; }
+div.menu ul li a {border:none;padding: 1em 1.5em;}
+div.menu ul li ul.sub-menu {left:0; right:auto;}
+div.menu ul li ul.sub-menu li {left:auto; clear:left;}
+div.menu ul li ul.sub-menu li ul.sub-menu {left: 12em; top:-1px;}
+a > .sf-sub-indicator {top:1.1em;}
+div.menu ul li:hover ul, div.menu ul li.sfHover ul {top:3em;}
+
+/* Image hover nav */
+.single .content {padding: 0;}
+.maincontent {position: relative; display: block; height: 600px; overflow: hidden;}
+.maincontent .nav-previous a, .maincontent .nav-next a {border:none;background:url('images/1x1.png');position: absolute; top: 0; text-indent: -9999em; width: 50%; height: 100%; padding:0;margin:0; zoom: 1; display: inline;overflow: hidden;}
+.maincontent .nav-previous a { right: 0;    }
+.maincontent .nav-next a {left: 0; }
+.maincontent .nav-previous a:hover, .maincontent  .nav-next a:hover {border:none;  }
+.maincontent .nav-previous a:hover { background: url(images/rightarrow.png) 95% 50% no-repeat;}
+.maincontent  .nav-next a:hover { background: url(images/leftarrow.png) 5% 50% no-repeat;}
+
+/* Gallery */
+dl.gallery-item {margin-bottom: 0 !important;}
+dd.gallery-caption {margin: 0 auto !important; width: 300px;}
+
+div.meta {padding: 10px 0 0; }
+div.meta {float:left;}
+div.meta a, .entry-date {font-weight: normal; font-size: 11px; text-transform: none; }
+.imgnav {float:right;}
+div.imgnav .navigation {float: right;margin-top:13px;width: 40px;}
+div.imgnav .navigation .nav-previous {float: right;}
+div.imgnav .navigation a {text-indent: -999em;padding:0;display: block; border:none;background: url(images/arrows.png) no-repeat; width: 11px; height: 16px;margin-left: 8px;}
+div.imgnav .navigation .nav-previous a {background-position: -11px 0px}
+div.imgnav .navigation .nav-next a {background-position: 0px 0px;}
+div.imgnav .navigation .nav-previous a:hover {background-position: -11px -16px}
+div.imgnav .navigation .nav-next a:hover {background-position: 0px -16px;}
+div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
+
+
+#commentsbox, #singlecontent {display: none;}
+
+#footer {padding: 10px 0; text-align: center;  border: none !important;}
+#footer a {font-weight: normal; }
+.copytext {clear:both; padding-top: 15px;font-size:11px;}
+.footerwidget {height: 100%}
+
+/* multiple images in a post */
+.slide {position: relative;width: 940px;}
+.slide .image.vertical img {max-height:600px; width: auto;margin: 0 auto;}
+.slide div {width: 940px;}
+.slide img { margin: 0 auto;width:auto;}
+.horizontal {position:absolute;}
+
+#circles {float:right;}
+#indicator {display: none; float:left;text-align:right; margin: 15px 0 0;padding: 0;}
+#indicator a {text-indent: -9999em; width: 11px; height: 11px; display:inline;float: left; text-align:left;border:none; padding: 0 3px 0 0;}
+#indicator a.active {background-position: 0 -12px;}
+#indicator a:hover {cursor: default;}
+
+#commentsbox{margin: 30px 150px; clear:both;}
+#singlecontent {margin: 10px 0 0; padding: 50px 150px 30px;}
+#respond {margin-top: 10px;}
+#singlecontent p:first-child:first-letter {font-size: 300%;float:left;display: block; margin:0 0 0 0;padding:0;line-height:0.9;padding-right: 5px;font-weight: bold;}
+
+.singleblog {margin-top: 20px;}
+.singleblog #commentsbox {display: block !important;}
+.singleblog .navigation .nav-previous,.singleblog .navigation .nav-next {display: block;} 
+.singleblog .navigation .nav-previous a,.singleblog .navigation .nav-next {position: relative; text-indent: 0; color: #999 !important; width: auto; opacity: 1;}
+.page-template-page-blog-php .post {margin: 30px 0;}
+
+.video-thumb {background: url(images/video.png) no-repeat;  z-index: 1; }

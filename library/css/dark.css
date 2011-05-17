@@ -1,0 +1,12 @@
+/* Dark */
+
+@import url("../../../base/library/css/dark.css");
+.maincontent .nav-previous a, .maincontent .nav-next a { }
+div.menu {border-top: 1px solid #444;border-bottom: 1px solid #444;}
+div.menu ul li ul.sub-menu, #singlecontent, .footerwidget, .copytext {border-top: 1px solid #444;}
+.page-template-page-blog-php .post {border-bottom: 1px solid #444 }
+#commentsbox{border-top:1px dotted #444;}
+#footer, #footer a, h2.title {color: #555;}
+div.meta a, .entry-date, .postmetadata, .postmetadata a { color: #666;}
+div.meta a.title {color: #fff;}
+#indicator a {text-indent: -9999em;background: url(../../images/circlefills-dark.png) no-repeat;}

@@ -1,0 +1,14 @@
+/* Default */
+
+@import url("../../../base/library/css/default.css");
+.maincontent .nav-previous a, .maincontent .nav-next a {  }
+div.menu {border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;}
+div.menu ul li ul.sub-menu, #singlecontent, .footerwidget, .copytext {border-top: 1px solid #ddd;}
+div.menu, div.menu ul ul, div.menu ul a {background-color: #fff}
+#commentsbox{border-top:1px dotted #ddd;}
+#footer, #footer a, h2.title {color: #aaa;}
+div.meta a, .entry-date, .postmetadata, .postmetadata a { color: #999;}
+div.meta a.title {color: #000;}
+#indicator a {text-indent: -9999em;background: url(../../images/circlefills.png) no-repeat;}
+div.menu ul ul li a {background-color: #efefef;}
+div.menu ul ul li a:hover {background-color: #ddd;}
