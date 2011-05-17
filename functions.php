@@ -63,6 +63,7 @@ function remove_gpp_base_actions() {
 	remove_action('gpp_base_search_loop_hook','gpp_base_search_loop'); 	
  	remove_action('gpp_base_check_sidebar_hook', 'gpp_base_check_sidebar');
 	remove_action('gpp_base_footer_credits_hook', 'gpp_base_footer_credits');
+
 }
 
 /* overwriting the base prev next links with in_same_cat to true */
