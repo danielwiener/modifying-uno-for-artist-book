@@ -408,7 +408,7 @@ function dw_gpp_base_footer_credits() {
 			$url = $affiliate;
 			else
 			$url = 'http://graphpaperpress.com';
-		_e('<a href="http://graphpaperpress.com/themes/'.strtolower(str_replace(" ", "-", $themename)).'/" title="'.$themename.' theme framework for WordPress">'.$themename.' theme</a> by <a href="'.$url.'" title="Graph Paper Press">Graph Paper Press</a>, modified by Daniel Wiener.','gpp_base_lang'); ?>
+		_e('<a href="' .$url . '" title="'.$themename.' theme framework for WordPress">'.$themename.'</a> by <a href="'.$url.'" title="Graph Paper Press">Graph Paper Press</a>','gpp_base_lang'); ?>
 		 </p>
 	</div>
 <?php }
