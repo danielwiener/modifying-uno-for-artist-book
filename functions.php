@@ -47,8 +47,9 @@ if((isset($gpp['gpp_base_footer']) && $gpp['gpp_base_footer']==true)){
 // Add Post Thumbnail Theme Support
 if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 300, 200, true );
+	set_post_thumbnail_size( 300, 400, true );
 	add_image_size( '300x200', 300, 200, true );
+	add_image_size( '300x400', 300, 400, true );
 }
 
 // remove base indexloop / footer
@@ -61,6 +62,7 @@ function remove_gpp_base_actions() {
 	remove_action('gpp_base_author_loop_hook', 'gpp_base_author_loop');
 	remove_action('gpp_base_search_loop_hook','gpp_base_search_loop'); 	
  	remove_action('gpp_base_check_sidebar_hook', 'gpp_base_check_sidebar');
+	remove_action('gpp_base_footer_credits_hook', 'gpp_base_footer_credits');
 }
 
 /* overwriting the base prev next links with in_same_cat to true */
@@ -389,4 +391,24 @@ function gpp_base_custom_css_uno() {
 		list($width) = getimagesize($logo);
 		echo "#masthead h1 {width: ".$width."px; margin: 0 auto 5px;}";
 	}
-}
+}  
+
+/*-----------------------------------------------------------------------------------*/
+/* FOOTER - CREDITS */
+/*-----------------------------------------------------------------------------------*/
+
+function dw_gpp_base_footer_credits() {
+	global $gpp, $themename;
+	$affiliate = $gpp['gpp_base_affiliate_url'];
+?>
+	<div id="below_footer" class="grid_12 clearfix">
+		<p><?php printf(__('All content &copy; %1$s by %2$s.','gpp_base_lang'),date('Y'),__(get_bloginfo('name'))); ?>
+		<?php if ($affiliate != '')
+			$url = $affiliate;
+			else
+			$url = 'http://graphpaperpress.com';
+		_e('<a href="http://graphpaperpress.com/themes/'.strtolower(str_replace(" ", "-", $themename)).'/" title="'.$themename.' theme framework for WordPress">'.$themename.' theme</a> by <a href="'.$url.'" title="Graph Paper Press">Graph Paper Press</a>, modified by Daniel Wiener.','gpp_base_lang'); ?>
+		 </p>
+	</div>
+<?php }
+add_action('gpp_base_footer_credits_hook', 'dw_gpp_base_footer_credits');
