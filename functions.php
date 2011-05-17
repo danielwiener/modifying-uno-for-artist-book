@@ -192,7 +192,7 @@ function gpp_base_single_post_uno() {
 		<div class="meta">				
 			<a href="#singlecontent" class="title"><?php the_title(); ?></a> <?php if(comments_open()) { ?>&#183;<?php } ?> <span class="comments-link"> <?php
 				comments_popup_link( __( 'Leave a comment', 'gpp' ), __( '1 Comment', 'gpp' ), __( '% Comments', 'gpp' ), '', '');  ?>
-			</span> &#183; <span><?php gpp_base_posted_on_hook(); ?></span>			
+			</span> <!-- &#183; --> <span><?php // gpp_base_posted_on_hook(); ?></span>			
 		</div>
 		<div class="imgnav">	
 				
