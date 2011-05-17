@@ -54,7 +54,7 @@ div.imgnav .navigation .nav-next a:hover {background-position: 0px -16px;}
 div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
 
 
-#commentsbox, #singlecontent {display: none;}
+#commentsbox, /*#singlecontent*/ {display: none;}
 
 #footer {padding: 10px 0; text-align: center;  border: none !important;}
 #footer a {font-weight: normal; }
