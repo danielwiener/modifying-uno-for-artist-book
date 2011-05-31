@@ -44,7 +44,7 @@ function dw_instructions_dashboard_widget_function() {
 	          'items' => 10,
 	          'show_summary' => 0,
 	          'show_author' => 0,
-	          'show_date' => 1
+	          'show_date' => 0
 	     ));
 	     echo '</div>';?> 
 <?php
