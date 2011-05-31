@@ -2,6 +2,69 @@
 global $gpp;
 $blogcats = "";
 $blogexclude = "";
+ 
+function dw_remove_dashboard_widgets() {
+	// Globalize the metaboxes array, this holds all the widgets for wp-admin
+	// comment out what you want or don't want
+ 	global $wp_meta_boxes;
+
+	//Right Now - Comments, Posts, Pages at a glance
+	//unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	//Recent Comments
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+	//Incoming Links
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	//Plugins - Popular, New and Recently updated Wordpress Plugins
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+
+	//Wordpress Development Blog Feed
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	//Other Wordpress News Feed
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+	//Quick Press Form
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	//Recent Drafts List
+	//unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
+}
+
+// Hook into the 'wp_dashboard_setup' action to register our function
+add_action('wp_dashboard_setup', 'dw_remove_dashboard_widgets' ); 
+
+function dw_instructions_dashboard_widget_function() {
+ ?>
+ 
+	 <h4><a href="http://documentation.diyartportfolios.com/" target="_blank">Some Instructions</a></h4>
+	 <p>Here are a set of instructions, that will be slowly growing. If you want something explained to you I will add it. Also please check the <a href="/wp-admin/admin.php?page=video-user-manuals/plugin.php">video manual</a></p>
+	<?php //comments - do this for grants category only. And maybe separate it into another function.  
+	//http://wpsnipp.com/index.php/functions-php/replace-dashboard-news-feed-with-another-rss-feed/
+	echo '<div class="rss-widget">';
+	     wp_widget_rss_output(array(
+	          'url' => 'http://documentation.diyartportfolios.com/feed',
+	          'title' => 'Helpful Documentation',
+	          'items' => 10,
+	          'show_summary' => 0,
+	          'show_author' => 0,
+	          'show_date' => 1
+	     ));
+	     echo '</div>';?> 
+<?php
+
+}     
+
+
+
+// Create the function use in the action hook
+
+function dw_add_dashboard_widgets() { 
+
+wp_add_dashboard_widget('dw_instructions_dashboard_widget', 'Instructions', 'dw_instructions_dashboard_widget_function');
+				
+} 
+
+// Hook into the 'wp_dashboard_setup' action to register our other functions
+
+add_action('wp_dashboard_setup', 'dw_add_dashboard_widgets' );
+
 
 // Unregister Sidebars
 add_action( 'init', 'gpp_base_sidewinder_sidebars', 11 );
@@ -105,21 +168,112 @@ function gpp_base_check_sidebar_uno() {
 	 echo "12"; 
 }
 
-// Redirect homepage to single post page
-add_action('gpp_base_loop_hook', 'gpp_base_loop_uno');	
+add_action('gpp_base_loop_hook', 'gpp_base_loop_uno');
 function gpp_base_loop_uno() { 
-	global $gpp, $blogcats;
-	$exblogcats = str_replace(",",",-",$blogcats);		
-	// grab latest post which is not blog
-	$posts = get_posts(array('numberposts'=>1,'category'=>-$exblogcats,'post__in'=>get_option('sticky_posts')));
-		
-	foreach($posts as $obj) { // no need for $a - just use $result
-   	 $id =  $obj->ID;
-	} 
+	global $blogexclude;
 	
-	wp_redirect(get_permalink($id)); 
+ 	$i = 0;
+ 	while ( have_posts() ) : the_post() ?>
+		<?php if ( !in_category($blogexclude) ): ?>
+				<div class="grid_4<?php if($i%3==0){ echo " alpha";} elseif ($i%3==2){echo " omega";} ?>">
+			<div class="archivecontent pad">
+				 <h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '400' ) ); ?></a>
+			</div>
+		</div>
+		<?php if($i%3==2){echo "<div class='clear'></div>";} ?>
+		<?php $i++; ?>  
+	<?php endif ?>
+	<?php  endwhile; ?>	
+<?php } 
 
-}
+/*-----------------------------------------------------------------------------------*/
+/* HEADER.PHP - TITLE */
+/*-----------------------------------------------------------------------------------*/
+ 
+add_filter( 'gpp_base_doctitle', 'dw_change_base_doctitle', 10, $doctitle ); 
+function dw_change_base_doctitle() {
+	 $site_name = get_bloginfo('name');
+	//     $separator = '|';
+	//         	
+	//     if ( is_single() ) {
+	//       $content = single_post_title('', FALSE);
+	//     } elseif ( is_home() || is_front_page() ) { 
+	//       $content = get_bloginfo('description');
+	//     } elseif ( is_page() ) { 
+	//       $content = single_post_title('', FALSE); 
+	//     } elseif ( is_search() ) { 
+	//       $content = __('Search Results for:', 'gpp_base_lang'); 
+	//       $content .= ' ' . esc_html(stripslashes(get_search_query()), true);
+	//     } elseif ( is_category() ) {
+	//       $content = __('', 'gpp_base_lang');
+	//       $content .= ' ' . single_cat_title("", false);;
+	//     } elseif ( is_tag() ) { 
+	//       $content = __('Tag Archives:', 'gpp_base_lang');
+	//       $content .= ' ' . get_query_var('tag');
+	//     } elseif ( is_404() ) { 
+	//       $content = __('Not Found', 'gpp_base_lang'); 
+	//     } else { 
+	//       $content = get_bloginfo('description');
+	//     }
+	// 
+	//     if (get_query_var('paged')) {
+	//       $content .= ' ' .$separator. ' ';
+	//       $content .= 'Page';
+	//       $content .= ' ';
+	//       $content .= get_query_var('paged');
+	//     }
+	// 
+	//     if($content) {
+	//      
+	//       $elements = array(
+	//         'site_name' => $site_name,
+	//         'separator' => $separator,
+	//         'content' => $content
+	//       );
+	// 
+	//     } else {
+	//       $elements = array(
+	//         'site_name' => $site_name
+	//       );
+	//     }  
+
+    // Filters should return an array
+        //$elements = apply_filters('gpp_base_doctitle', $elements); this caused a 500 error!!!!
+      	
+
+		$elements = array(
+			'site_name' => $site_name
+		); 
+		
+		//But if they don't, it won't try to implode
+        if(is_array($elements)) {
+                 $doctitle = implode(' ', $elements);
+               } else {
+                 $doctitle = $elements;
+               }
+		                                   
+ 
+    $doctitle = "<title>" . $doctitle . "</title>" . "\n";
+    
+    echo $doctitle;
+} // end gpp_base_doctitle
+
+// Redirect homepage to single post page
+// add_action('gpp_base_loop_hook', 'gpp_base_loop_uno');	
+// function gpp_base_loop_uno() { 
+// 	global $gpp, $blogcats;
+// 	$exblogcats = str_replace(",",",-",$blogcats);		
+// 	// grab latest post which is not blog
+// 	$posts = get_posts(array('numberposts'=>1,'category'=>-$exblogcats,'post__in'=>get_option('sticky_posts')));
+// 		
+// 	foreach($posts as $obj) { // no need for $a - just use $result
+//    	 $id =  $obj->ID;
+// 	} 
+// 	
+// 	wp_redirect(get_permalink($id)); 
+// 
+// }              
 
 
 // single post design
