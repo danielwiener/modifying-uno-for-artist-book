@@ -9,8 +9,19 @@ Version: 1.1
 License:  GPL
 */
 	
-@import url("../base/style.css");
+@import url("../base/style.css"); 
 
+.archivecontent {
+   /* border: 1px solid green;*/ ; 
+}
+
+.pad, .container_12 {
+	   /*border: 1px solid red;*/     
+}
+
+.container_12 .grid_3 {
+	   width: 200px;    
+}
 .app {border:none;}
 #masthead {text-align: center;padding: 1.5em 0;}
 h2.title {font-size: 16px;text-align: center;text-transform: uppercase;}

@@ -10,7 +10,7 @@ function dw_remove_dashboard_widgets() {
 
 	//Right Now - Comments, Posts, Pages at a glance
 	//unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
-	//Recent Comments
+	//Recent Comments                                                                                              
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
 	//Incoming Links
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
@@ -110,9 +110,11 @@ if((isset($gpp['gpp_base_footer']) && $gpp['gpp_base_footer']==true)){
 // Add Post Thumbnail Theme Support
 if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 300, 400, true );
+	set_post_thumbnail_size( 130, 200, true );
 	add_image_size( '300x200', 300, 200, true );
 	add_image_size( '300x400', 300, 400, true );
+	add_image_size( '200x300', 200, 300, true );
+	add_image_size( '175x260', 130, 200, true );
 }
 
 // remove base indexloop / footer
@@ -175,13 +177,13 @@ function gpp_base_loop_uno() {
  	$i = 0;
  	while ( have_posts() ) : the_post() ?>
 		<?php if ( !in_category($blogexclude) ): ?>
-				<div class="grid_4<?php if($i%3==0){ echo " alpha";} elseif ($i%3==2){echo " omega";} ?>">
-			<div class="archivecontent pad">
-				 <h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '400' ) ); ?></a>
-			</div>
+				<div class="grid_3<?php if($i%4==0){ echo " alpha";} elseif ($i%4==3){echo " omega";} ?>">
+			<!-- <div class="archivecontent pad"> -->
+				 <p class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></p>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '175', 'height' => '260' ) ); ?></a>
+			<!-- </div>  -->
 		</div>
-		<?php if($i%3==2){echo "<div class='clear'></div>";} ?>
+		<?php if($i%4==3){echo "<div class='clear'></div>";} ?>
 		<?php $i++; ?>  
 	<?php endif ?>
 	<?php  endwhile; ?>	
@@ -401,13 +403,13 @@ add_action('gpp_base_archive_loop_hook', 'gpp_base_archive_loop_uno');
 function gpp_base_archive_loop_uno() { 
  	$i = 0;
  	while ( have_posts() ) : the_post() ?>
-	<div class="grid_4<?php if($i%3==0){ echo " alpha";} elseif ($i%3==2){echo " omega";} ?>">
-		<div class="archivecontent pad">
-			 <h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '300', 'height' => '400' ) ); ?></a>
-		</div>
+	<div class="grid_3<?php if($i%4==0){ echo " alpha";} elseif ($i%4==3){echo " omega";} ?>">
+	    <div class="archivecontent pad">   
+			 <p class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a><p>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '175', 'height' => '260' ) ); ?></a>
+	   </div> 
 	</div>
-	<?php if($i%3==2){echo "<div class='clear'></div>";} ?>
+	<?php if($i%4==3){echo "<div class='clear'></div>";} ?>
 	<?php $i++; endwhile; ?>	
 <?php }
 
