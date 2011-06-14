@@ -128,8 +128,23 @@ function remove_gpp_base_actions() {
 	remove_action('gpp_base_search_loop_hook','gpp_base_search_loop'); 	
  	remove_action('gpp_base_check_sidebar_hook', 'gpp_base_check_sidebar');
 	remove_action('gpp_base_footer_credits_hook', 'gpp_base_footer_credits');
+	remove_action( 'gpp_base_header_hook','gpp_base_site_description', 3 );
+	remove_action('gpp_base_nav_hook','gpp_base_nav');
 
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* HEADER.PHP - NAVIGATION */
+/*-----------------------------------------------------------------------------------*/
+
+// Make Menu Support compatible with earlier WP versions
+function dw_gpp_base_nav() {
+	if ( function_exists( 'wp_nav_menu' ) )
+		wp_nav_menu( 'sort_column=menu_order&menu_location=main-menu&container_class=menu&fallback_cb=gpp_base_nav_fallback' );
+	else
+		gpp_base_nav_fallback();
+}
+add_action('gpp_base_nav_hook','dw_gpp_base_nav');
 
 /* overwriting the base prev next links with in_same_cat to true */
 add_filter('gpp_base_previous_post_link_args','gpp_base_previous_post_link_args_uno');

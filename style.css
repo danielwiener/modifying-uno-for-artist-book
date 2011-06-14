@@ -70,7 +70,10 @@ h2.title {
 	}
 h3 {margin-top:10px;}
 
-/* Menu */
+/* Menu */ 
+/*Daniel  */
+div.menu { float:left; width:70%; font-size:.9em; }
+
 div.menu ul {clear:left; float:right; right:50%;position: relative;border:none !important;}
 div.menu ul li {left: 50%; }
 div.menu ul li a {border:none;padding: 1em 1.5em;}
