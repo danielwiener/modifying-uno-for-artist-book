@@ -173,7 +173,9 @@ function gpp_base_check_sidebar_uno() {
 add_action('gpp_base_loop_hook', 'gpp_base_loop_uno');
 function gpp_base_loop_uno() { 
 	global $blogexclude;
-	
+	 ?>
+	 	<div class="content grid_12">
+	 <?php
  	$i = 0;
  	while ( have_posts() ) : the_post() ?>
 		<?php if ( !in_category($blogexclude) ): ?>
@@ -186,7 +188,8 @@ function gpp_base_loop_uno() {
 		<?php if($i%5==4){echo "<div class='clear'></div>";} ?>
 		<?php $i++; ?>  
 	<?php endif ?>
-	<?php  endwhile; ?>	
+	<?php  endwhile; ?>
+	</div>	
 <?php } 
 
 /*-----------------------------------------------------------------------------------*/

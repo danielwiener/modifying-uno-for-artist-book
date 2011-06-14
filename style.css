@@ -45,7 +45,6 @@ License:  GPL
 .container_12 .grid_2 {  /*overrides base's style page - this is for spacing of thumbnails  */
 	   width: 168px; 
 	   margin-bottom: 20px;
-	border: 1px solid #999;
 } 
 
 p.entry-title { 
@@ -60,7 +59,8 @@ p.entry-title {
 ********************************************************** 
 */
 .app {border:none;}
-#masthead {text-align: center;padding: 1.5em 0;}
+#masthead {/*text-align: center;*/ /*daniel*/
+	padding: 1.5em 0;}
 h2.title {
 	font-size: 16px;
 	text-align: center;
