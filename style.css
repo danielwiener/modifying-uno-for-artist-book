@@ -59,8 +59,10 @@ p.entry-title {
 ********************************************************** 
 */
 .app {border:none;}
-#masthead {/*text-align: center;*/ /*daniel*/
-	padding: 1.5em 0;}
+#masthead {
+	/*text-align: center;*/ /*daniel deleted this for Site Title to go left*/
+	padding: 1.5em 0;} 
+	
 h2.title {
 	font-size: 16px;
 	text-align: center;
