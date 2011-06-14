@@ -11,6 +11,11 @@ License:  GPL
 	
 @import url("../base/style.css"); 
 
+/*
+**********************************************************
+* Daniel Additions
+********************************************************** 
+*/
 .archivecontent {
    /* border: 1px solid green;*/ ; 
 }
@@ -21,10 +26,24 @@ License:  GPL
 
 .container_12 .grid_3 {
 	   width: 200px;    
-}
+} 
+
+.container_12 .grid_2 {  /*overrides base's style page - this is for spacing of thumbnails  */
+	   width: 175px;    
+} 
+
+/*
+**********************************************************
+* End Daniel Additions
+********************************************************** 
+*/
 .app {border:none;}
 #masthead {text-align: center;padding: 1.5em 0;}
-h2.title {font-size: 16px;text-align: center;text-transform: uppercase;}
+h2.title {
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	}
 h3 {margin-top:10px;}
 
 /* Menu */
