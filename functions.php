@@ -179,8 +179,8 @@ function gpp_base_loop_uno() {
 		<?php if ( !in_category($blogexclude) ): ?>
 				<div class="grid_2<?php if($i%5==0){ echo " alpha";} elseif ($i%5==4){echo " omega";} ?>">
 			<!-- <div class="archivecontent pad"> -->
-				 <p class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></p>
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '130', 'height' => '200' ) ); ?></a>
+				 <p class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></p>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '130', 'height' => '200' ) ); ?></a>
 			<!-- </div>  -->
 		</div>
 		<?php if($i%5==4){echo "<div class='clear'></div>";} ?>
@@ -403,11 +403,9 @@ add_action('gpp_base_archive_loop_hook', 'gpp_base_archive_loop_uno');
 function gpp_base_archive_loop_uno() { 
  	$i = 0;
  	while ( have_posts() ) : the_post() ?>
-	<div class="grid_2<?php if($i%5==0){ echo " alpha";} elseif ($i%5==4){echo " omega";} ?>">
-	    <div class="archivecontent pad">   
-			 <p class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a><p>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '130', 'height' => '200' ) ); ?></a>
-	   </div> 
+	<div class="grid_2<?php if($i%5==0){ echo " alpha";} elseif ($i%5==4){echo " omega";} ?>">   
+			 <p class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a><p>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s','gpp_base_lang'),the_title_attribute('echo=0')); ?>"><?php gpp_base_image( array( 'width' => '130', 'height' => '200' ) ); ?></a>
 	</div>
 	<?php if($i%5==4){echo "<div class='clear'></div>";} ?>
 	<?php $i++; endwhile; ?>	

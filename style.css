@@ -24,6 +24,15 @@ License:  GPL
 	   /*border: 1px solid red;*/     
 }
 
+.content { 
+   /* padding:0 0 0 0 !important;*/ 
+	}
+	
+/*.grid_12 {
+	margin: 0 0 0 0 !important;
+	border: 1px solid red;
+} */ 
+
 .alpha {
 	margin-left:5px; /*changing to center thumbnails a little better*/  
 	}  
@@ -32,9 +41,11 @@ License:  GPL
 	   width: 200px;    
 } 
 
+
 .container_12 .grid_2 {  /*overrides base's style page - this is for spacing of thumbnails  */
-	   width: 175px; 
+	   width: 168px; 
 	   margin-bottom: 20px;
+	border: 1px solid #999;
 } 
 
 p.entry-title { 
