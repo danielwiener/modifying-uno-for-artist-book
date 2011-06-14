@@ -29,8 +29,15 @@ License:  GPL
 } 
 
 .container_12 .grid_2 {  /*overrides base's style page - this is for spacing of thumbnails  */
-	   width: 175px;    
+	   width: 175px; 
+	   margin-bottom: 20px;
 } 
+
+p.entry-title { 
+	margin:0; 
+	font-weight:normal;
+	font-size: 12px;
+	} 
 
 /*
 **********************************************************
