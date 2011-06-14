@@ -61,7 +61,10 @@ p.entry-title {
 .app {border:none;}
 #masthead {
 	/*text-align: center;*/ /*daniel deleted this for Site Title to go left*/
-	padding: 1.5em 0;} 
+	padding: 1.5em 0;
+	float: left;
+	margin-right: 40px;
+	} 
 	
 h2.title {
 	font-size: 16px;
@@ -72,7 +75,10 @@ h3 {margin-top:10px;}
 
 /* Menu */ 
 /*Daniel  */
-div.menu { float:left; width:70%; font-size:.9em; }
+div.menu { float:left;
+	width:65%;
+	font-size:.9em; 
+	margin-top: 20px;}
 
 div.menu ul {clear:left; float:right; right:50%;position: relative;border:none !important;}
 div.menu ul li {left: 50%; }
