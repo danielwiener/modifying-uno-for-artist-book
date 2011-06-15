@@ -41,7 +41,9 @@ License:  GPL
 	   width: 200px;    
 } 
 
-
+#logo {
+	font-weight: lighter;
+}
 .container_12 .grid_2 {  /*overrides base's style page - this is for spacing of thumbnails  */
 	   width: 168px; 
 	   margin-bottom: 20px;
@@ -50,8 +52,17 @@ License:  GPL
 p.entry-title { 
 	margin:0; 
 	font-weight:normal;
-	font-size: 12px;
-	} 
+	font-size: 10px;
+	}  
+	
+p.entry-title a:link, p.entry-title a:visited {
+	text-decoration: none !important;
+	border: 0px solid #fff;
+	}  
+	
+p.entry-title a:hover, p.entry-title a:active {
+	color: #666;
+	}
 
 /*
 **********************************************************

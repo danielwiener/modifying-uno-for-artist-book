@@ -26,6 +26,30 @@ function dw_remove_dashboard_widgets() {
 	//Recent Drafts List
 	//unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
 }
+ // Daniel, Add typekit
+if (!is_admin()) add_action( 'init', 'dw_load_js' );
+function dw_load_js( ) {	   
+	wp_register_script('typekit', 'http://use.typekit.com/tdl8kov.js');
+	wp_enqueue_script('typekit'); 
+	  
+} 
+
+
+// Load Dom Ready Javascripts
+
+function dw_load_typekit_js() {
+	
+	$dw_typekit_script = '';
+	$dw_typekit_script = '
+<script type="text/javascript">
+	try{Typekit.load();}catch(e){}
+</script>' . "\n";
+					
+	echo $dw_typekit_script;	
+}
+
+// Add DW typekit script
+add_action('wp_head', 'dw_load_typekit_js');
 
 // Hook into the 'wp_dashboard_setup' action to register our function
 add_action('wp_dashboard_setup', 'dw_remove_dashboard_widgets' ); 
