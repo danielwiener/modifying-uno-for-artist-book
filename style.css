@@ -107,8 +107,8 @@ div.menu ul li:hover ul, div.menu ul li.sfHover ul {top:3em;}
 .maincontent .nav-previous a { right: 0;    }
 .maincontent .nav-next a {left: 0; }
 .maincontent .nav-previous a:hover, .maincontent  .nav-next a:hover {border:none;  }
-.maincontent .nav-previous a:hover { background: url(images/rightarrow.png) 95% 50% no-repeat;}
-.maincontent  .nav-next a:hover { background: url(images/leftarrow.png) 5% 50% no-repeat;}
+.maincontent .nav-previous a:hover { /*background: url(images/rightarrow.png) 95% 50% no-repeat;*/}
+.maincontent  .nav-next a:hover { /*background: url(images/leftarrow.png) 5% 50% no-repeat;*/}
 
 /* Gallery */
 dl.gallery-item {margin-bottom: 0 !important;}
