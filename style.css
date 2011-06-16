@@ -102,7 +102,7 @@ div.menu ul li:hover ul, div.menu ul li.sfHover ul {top:3em;}
 
 /* Image hover nav */
 .single .content {padding: 0;}
-.maincontent {position: relative; display: block; height: 600px; overflow: hidden;}
+.maincontent {position: relative; display: block; height: 500px; overflow: hidden;}
 .maincontent .nav-previous a, .maincontent .nav-next a {border:none;background:url('images/1x1.png');position: absolute; top: 0; text-indent: -9999em; width: 50%; height: 100%; padding:0;margin:0; zoom: 1; display: inline;overflow: hidden;}
 .maincontent .nav-previous a { right: 0;    }
 .maincontent .nav-next a {left: 0; }
@@ -114,7 +114,10 @@ div.menu ul li:hover ul, div.menu ul li.sfHover ul {top:3em;}
 dl.gallery-item {margin-bottom: 0 !important;}
 dd.gallery-caption {margin: 0 auto !important; width: 300px;}
 
-div.meta {padding: 10px 0 0; }
+div.meta {
+	padding: 10px 0 0; 
+	width: 180px;
+`	}
 div.meta {float:left;}
 div.meta a, .entry-date {font-weight: normal; font-size: 11px; text-transform: none; }
 .imgnav {float:right;}
@@ -136,9 +139,12 @@ div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
 .footerwidget {height: 100%}
 
 /* multiple images in a post */
-.slide {position: relative;width: 940px;}
-.slide .image.vertical img {max-height:600px; width: auto;margin: 0 auto;}
-.slide div {width: 940px;}
+.slide {position: relative;
+	width: 740px;
+	float: right; 
+	}
+.slide .image.vertical img {max-height:500px; width: auto;margin: 0 auto;}
+.slide div {width: 740px;}
 .slide img { margin: 0 auto;width:auto;}
 .horizontal {position:absolute;}
 
@@ -149,9 +155,14 @@ div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
 #indicator a:hover {cursor: default;}
 
 #commentsbox{margin: 30px 150px; clear:both;}
-#singlecontent {margin: 10px 0 0; padding: 50px 150px 30px;}
+#singlecontent {
+	margin: 0;
+	padding: 0;
+	width: 170px;
+	border: 1px solid green;}
+	
 #respond {margin-top: 10px;}
-#singlecontent p:first-child:first-letter {font-size: 300%;float:left;display: block; margin:0 0 0 0;padding:0;line-height:0.9;padding-right: 5px;font-weight: bold;}
+/*#singlecontent p:first-child:first-letter {font-size: 300%;float:left;display: block; margin:0 0 0 0;padding:0;line-height:0.9;padding-right: 5px;font-weight: bold;}    */
 
 .singleblog {margin-top: 20px;}
 .singleblog #commentsbox {display: block !important;}
@@ -160,3 +171,5 @@ div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
 .page-template-page-blog-php .post {margin: 30px 0;}
 
 .video-thumb {background: url(images/video.png) no-repeat;  z-index: 1; }
+
+div.menu, #singlecontent { border: none; } /*daniel    */

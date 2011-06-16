@@ -335,11 +335,14 @@ function gpp_base_single_post_uno() {
 			if(!in_category($catarray)): ?>
 		
 		<div id="post-<?php the_ID() ?>" class="maincontent">
-			
+		  	<div class="meta">				
+				<a href="#singlecontent" class="title"><?php the_title(); ?></a>
+				<p> <?php the_content(); ?>    </p> 	
+			</div>
 			<div class="slide">
 			
 			<?php if(!$videos) { ?>
-			
+
 			<?php 
 			$args = array(
 				'order'          => 'ASC',
@@ -387,11 +390,7 @@ function gpp_base_single_post_uno() {
 	
 		</div>		
 		
-		<div class="meta">				
-			<a href="#singlecontent" class="title"><?php the_title(); ?></a> <?php if(comments_open()) { ?>&#183;<?php } ?> <span class="comments-link"> <?php
-				comments_popup_link( __( 'Leave a comment', 'gpp' ), __( '1 Comment', 'gpp' ), __( '% Comments', 'gpp' ), '', '');  ?>
-			</span> <!-- &#183; --> <span><?php // gpp_base_posted_on_hook(); ?></span>			
-		</div>
+
 		<div class="imgnav">	
 				
 			<?php gpp_base_navigation_hook(); ?><div id="circles"><div id="indicator"></div></div>			
@@ -431,13 +430,9 @@ function gpp_base_single_post_uno() {
 }
 
 add_action('gpp_base_after_single_post_hook', 'gpp_base_after_single_post_uno');	
-function gpp_base_after_single_post_uno() { ?>
-	<div class="clear"></div>
-	<div id="singlecontent">
-		<?php the_content(); ?>
-	</div>
-
-<?php } 
+function gpp_base_after_single_post_uno() { //do nothing ?>
+	
+<?php }
 
 //add archive and author page
 add_action('gpp_base_author_loop_hook', 'gpp_base_archive_loop_uno');	
@@ -600,11 +595,6 @@ function dw_gpp_base_footer_credits() {
 ?>
 	<div id="below_footer" class="grid_12 clearfix">
 		<p><?php printf(__('All content &copy; %1$s by %2$s.','gpp_base_lang'),date('Y'),__(get_bloginfo('name'))); ?>
-		<?php if ($affiliate != '')
-			$url = $affiliate;
-			else
-			$url = 'http://graphpaperpress.com';
-		_e('<a href="' .$url . '" title="'.$themename.' theme framework for WordPress">'.$themename.'</a> by <a href="'.$url.'" title="Graph Paper Press">Graph Paper Press</a>','gpp_base_lang'); ?>
 		 </p>
 	</div>
 <?php }
