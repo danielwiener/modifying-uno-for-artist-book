@@ -599,3 +599,4 @@ function dw_gpp_base_footer_credits() {
 	</div>
 <?php }
 add_action('gpp_base_footer_credits_hook', 'dw_gpp_base_footer_credits');
+?>

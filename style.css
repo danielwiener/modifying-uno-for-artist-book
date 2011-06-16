@@ -159,7 +159,7 @@ div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
 	margin: 0;
 	padding: 0;
 	width: 170px;
-	border: 1px solid green;}
+	}
 	
 #respond {margin-top: 10px;}
 /*#singlecontent p:first-child:first-letter {font-size: 300%;float:left;display: block; margin:0 0 0 0;padding:0;line-height:0.9;padding-right: 5px;font-weight: bold;}    */
@@ -172,4 +172,14 @@ div.meta a.title {font-weight: bold;border: none;font-size: 16px !important;}
 
 .video-thumb {background: url(images/video.png) no-repeat;  z-index: 1; }
 
-div.menu, #singlecontent { border: none; } /*daniel    */
+div.menu, #singlecontent { border: none; } /*daniel    */    
+
+.content #commentsbox {
+	display: none !important;
+	border: none;
+}  
+
+.content #comments {
+	display: none  !important;
+	border: none;
+}
